@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI-ChatBot</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#6a11cb,#2575fc);
+    background-size:400% 400%;
+    animation:bg 15s ease infinite;
+    overflow:hidden;
+}
+
+@keyframes bg{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.container{
+    width:420px;
+    height:700px;
+    backdrop-filter:blur(18px);
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:30px;
+    box-shadow:
+    0 0 30px rgba(0,255,255,.25),
+    0 0 60px rgba(0,0,0,.3);
+    overflow:hidden;
+    position:relative;
+}
+
+.header{
+    height:90px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(255,255,255,.05);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.header h1{
+    color:white;
+    font-size:30px;
+    letter-spacing:2px;
+    text-shadow:0 0 15px cyan;
+}
+
+.chat-area{
+    height:520px;
+    padding:25px;
+    overflow-y:auto;
+}
+
+.message{
+    max-width:80%;
+    padding:14px 18px;
+    margin-bottom:18px;
+    border-radius:18px;
+    color:white;
+    font-size:15px;
+    animation:fade .5s ease;
+}
+
+.bot{
+    background:linear-gradient(135deg,#00c6ff,#0072ff);
+    box-shadow:0 0 20px rgba(0,170,255,.5);
+}
+
+.user{
+    background:linear-gradient(135deg,#ff6a00,#ee0979);
+    margin-left:auto;
+    box-shadow:0 0 20px rgba(255,0,120,.4);
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.input-area{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    padding:18px;
+    display:flex;
+    gap:10px;
+    background:rgba(255,255,255,.04);
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+input{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:50px;
+    outline:none;
+    font-size:15px;
+    background:rgba(255,255,255,.15);
+    color:white;
+}
+
+input::placeholder{
+    color:#ddd;
+}
+
+button{
+    border:none;
+    width:60px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#00F260,#0575E6);
+    color:white;
+    font-size:24px;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow:0 0 15px #00ffae;
+}
+
+button:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 25px cyan;
+}
+
+.circle{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(70px);
+    opacity:.35;
+}
+
+.c1{
+    width:220px;
+    height:220px;
+    background:#00ffff;
+    top:-80px;
+    left:-60px;
+}
+
+.c2{
+    width:250px;
+    height:250px;
+    background:#ff00ff;
+    bottom:-120px;
+    right:-80px;
+}
+
+::-webkit-scrollbar{
+    width:6px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:cyan;
+    border-radius:10px;
+}
+
+.status{
+    color:#9cff9c;
+    font-size:12px;
+    margin-top:4px;
+    text-align:center;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="circle c1"></div>
+<div class="circle c2"></div>
+
+<div class="container">
+
+<div class="header">
+<div>
+<h1>🤖 AI-ChatBot</h1>
+<div class="status">● Online</div>
+</div>
+</div>
+
+<div class="chat-area">
+
+<div class="message bot">
+👋 Hello! I'm your AI Assistant.<br><br>
+How can I help you today?
+</div>
+
+<div class="message user">
+Can you tell me a joke?
+</div>
+
+<div class="message bot">
+😂 Why don't programmers like nature?<br><br>
+Because it has too many bugs!
+</div>
+
+</div>
+
+<div class="input-area">
+
+<input
+type="text"
+placeholder="Type your message..."
+>
+
+<button>➤</button>
+
+</div>
+
+</div>
+
+</body>
+</html>
